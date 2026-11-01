@@ -183,14 +183,14 @@ body{font-weight:400}.panel h2,.panel h3,.brand,#intro h1,.rec .n{font-family:va
 .ge img{width:100%;height:150px;object-fit:contain;background:#000}.ge input,.ge select{padding:6px;font-size:12px}.row2{display:flex;gap:6px}.row2 .chip{padding:6px 8px}
 pre{white-space:pre-wrap;margin-top:12px;color:#c9cde0}label.mono{display:block}select{width:100%;background:#050B18;border:1px solid #7778A8;color:#E8EAF0;padding:10px}
 @media(max-width:820px){.eg{grid-template-columns:1fr}.hs i{font-size:40px}}
-</style>
+body.gl #view,body.gl #rain,body.gl #bCr{display:none}#gl{position:fixed;inset:0;width:100%;height:100%;z-index:1;touch-action:none;cursor:grab}#gl:active{cursor:grabbing}#top,#guide,#clock,#pad,#prompt{z-index:20}</style>
 </head>
 <body>
 <div id="view" aria-hidden="true"><div id="sky"></div><div id="world"></div><div id="fog"></div></div>
 <canvas id="rain"></canvas><div id="vig"></div><div id="grain"></div>
 
 <header class="hud" id="top">
-  <div class="brand">DHARSHINI<br>HEMACHANDRAN<small>AFTER HOURS · HONG KONG</small></div>
+  <div class="brand">DHARSHINI<br>HEMACHANDRAN<small>AFTER HOURS · THE COMPOUND</small></div>
   <div class="btns">
     <button class="chip" id="bIdx" aria-expanded="false" aria-controls="idx">Jump to ▾</button>
     <button class="chip" id="bCr">Credits</button><button class="chip" id="bEd" style="display:none">Edit</button><button class="chip" id="bSnd" aria-pressed="false">Sound off</button>
@@ -207,8 +207,8 @@ pre{white-space:pre-wrap;margin-top:12px;color:#c9cde0}label.mono{display:block}
 
 <section id="intro">
   <div><div class="t" id="introT"></div><h1>AFTER<br><span>HOURS</span></h1>
-  <div class="t" style="color:var(--off)">A city that never stops thinking.</div>
-  <div class="go" id="introGo" style="margin-top:34px"><button class="chip" id="bEnter">Step outside ▸</button><button class="chip" id="bSkip" style="border-color:var(--lav)">Skip · view sections</button></div></div>
+  <div class="t" style="color:var(--off)">A quiet world with stories in every hall.</div>
+  <div class="go" id="introGo" style="margin-top:34px"><button class="chip" id="bEnter">Enter the compound ▸</button><button class="chip" id="bSkip" style="border-color:var(--lav)">Skip · view sections</button></div></div>
 </section>
 
 <script src="assets/gallery.js"></script>
@@ -276,7 +276,7 @@ let dy0=null;view.addEventListener('pointerdown',e=>{if(e.pointerType=='touch')d
 /* ---------- overlays ---------- */
 const ov=$('#ov');
 function goTo(t){const o=HS.find(o=>o.h.t==t);if(o){tz=clamp(-o.z-260,0,ZMAX);tsx=0}}
-function openP(id){const P=PANELS[id];if(!P)return;paused=true;keys={};goTo(id);ov.innerHTML=`<div class="panel" style="--c:${P.c}" role="document"><button class="chip x" id="cls">Close ✕</button><div class="loc mono">${P.loc}</div>${P.html()}</div>`;ov.classList.add('open');$('#idx').classList.remove('open');P.after&&P.after();$('#cls').onclick=closeP;ov.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>openP(b.dataset.go));$('#cls').focus()}
+function openP(id){const P=PANELS[id];if(!P)return;window.__tp&&window.__tp(id);paused=true;keys={};goTo(id);ov.innerHTML=`<div class="panel" style="--c:${P.c}" role="document"><button class="chip x" id="cls">Close ✕</button><div class="loc mono">${P.loc}</div>${P.html()}</div>`;ov.classList.add('open');$('#idx').classList.remove('open');P.after&&P.after();$('#cls').onclick=closeP;ov.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>openP(b.dataset.go));$('#cls').focus()}
 function closeP(){ov.classList.remove('open');ov.innerHTML='';build&&0;paused=false}
 /* lightbox */
 let li=0;function lb(i){li=(i+G.length)%G.length;const g=G[li];$('#lbI').src=src(g,'full');$('#lbI').alt=g.t||g.c+' — design '+g.f;$('#lbC').textContent=g.c+' · No.'+g.f+(g.t?' · '+g.t:'')+'  ·  '+(li+1)+'/'+G.length;$('#lb').classList.add('open');$('#lbX').focus()}
@@ -301,13 +301,13 @@ idx.onclick=e=>{const b=e.target.closest('button');if(b){enter();openP(b.dataset
 $('#bIdx').onclick=()=>{const o=idx.classList.toggle('open');$('#bIdx').setAttribute('aria-expanded',o)};
 $('#bCr').onclick=()=>{paused=true;ov.innerHTML=`<div class="panel" style="--c:#7778A8"><button class="chip x" id="cls">Close ✕</button><div class="loc mono">Photo credits</div><h2>Credits</h2><p>Environment built from Hong Kong photographs on Unsplash (Unsplash License). Colour-graded, not altered otherwise.</p>${CREDITS.map(([n,i])=>`<a class="tl" target="_blank" rel="noopener" href="https://unsplash.com/photos/${i}">${esc(n)} — Unsplash ↗</a>`).join('')}</div>`;ov.classList.add('open');$('#cls').onclick=closeP};
 /* ---------- intro ---------- */
-const lines=['HONG KONG · 01:30 AM','RAIN · 24°C · NO ONE ELSE IS AWAKE'];let li2=0,ci=0;
+const lines=['DUSK · THE OUTER GATE','MIST ON THE MOUNTAIN · THE LANTERNS ARE LIT'];let li2=0,ci=0;
 function type(){const t=$('#introT');if(li2>=lines.length){$('#introGo').classList.add('show');return}const L=lines[li2];if(ci<=L.length){t.textContent=L.slice(0,ci++);setTimeout(type,RM?0:38)}else{setTimeout(()=>{li2++;ci=0;type()},RM?0:650)}}type();
 function enter(){$('#intro').classList.add('gone');paused=false;if(!enter.d){enter.d=1;setTimeout(()=>$('#guide').style.opacity=.9,300)}}
 $('#bEnter').onclick=enter;$('#bSkip').onclick=()=>{enter();$('#idx').classList.add('open');$('#bIdx').setAttribute('aria-expanded',true)};
 
 /* ---------- clock ---------- */
-setInterval(()=>{const d=new Date(Date.now()+ (8*60-(-new Date().getTimezoneOffset()))*60000);$('#clock').textContent='HKT '+String(1).padStart(2,'0')+':'+String(30+Math.floor((performance.now()/60000)%29)).padStart(2,'0')+' · RAIN'},1000);
+setInterval(()=>{const d=new Date(Date.now()+ (8*60-(-new Date().getTimezoneOffset()))*60000);$('#clock').textContent='HKT '+String(1).padStart(2,'0')+':'+String(30+Math.floor((performance.now()/60000)%29)).padStart(2,'0')+' · DUSK'},1000);
 
 /* ---------- rain ---------- */
 const rc=$('#rain'),rx=rc.getContext('2d');let drops=[];
@@ -352,7 +352,7 @@ function editor(){paused=true;let tab='h',sel=null;
  $('#imp').onchange=e=>{const f=e.target.files[0];f&&f.text().then(t=>{try{const j=JSON.parse(t);if(!j.hot||!j.gal)throw 0;LAY=j;G=j.gal;save();show();say('Imported.')}catch(x){say('Invalid layout file.')}})};
  $('#rst').onclick=()=>{if(confirm('Reset to the default layout?')){LAY=JSON.parse(JSON.stringify(DEF));G=LAY.gal;save();show()}};
  $('#cls').onclick=()=>{build();closeP()}}
-$('#bEd').onclick=editor;window.__ah={audit,editor,get G(){return G}};
+$('#bEd').onclick=editor;window.__ah={keys:()=>keys,openP,closeP,audit,editor,get G(){return G}};
 /* ---------- go ---------- */
 build();rainLoop();requestAnimationFrame(frame);
 const hp=()=>{const h=location.hash.slice(1);if(PANELS[h]){enter();openP(h)}};hp();addEventListener('hashchange',hp);
@@ -360,5 +360,6 @@ if(edOn)console.info('Editor available: click Edit (Shift+E toggles).');
 })();
 
 </script>
+<script type="module" src="assets/world3d.js"></script>
 </body>
 </html>

@@ -11,3 +11,6 @@ Interactive 2D street-exploration portfolio. Plain HTML/CSS/JS: no build step.
 - **Copy/links:** edit the `PANELS` object in `index.html`.
 - Local preview: `python3 -m http.server` then open http://localhost:8000
 - Deep links: `#gallery`, `#about`, `#arcade`, `#studio`, `#contact`.
+
+## 3D world
+`assets/world3d.js` builds the explorable wuxia compound procedurally with Three.js (vendored in `assets/vendor`, MIT). If WebGL is unavailable the earlier 2D street is used. Zones/portfolio mapping: `Z` array in `world3d.js`.
