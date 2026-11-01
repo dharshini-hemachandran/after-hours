@@ -14,3 +14,6 @@ Interactive 2D street-exploration portfolio. Plain HTML/CSS/JS: no build step.
 
 ## 3D world
 `assets/world3d.js` builds the explorable wuxia compound procedurally with Three.js (vendored in `assets/vendor`, MIT). If WebGL is unavailable the earlier 2D street is used. Zones/portfolio mapping: `Z` array in `world3d.js`.
+
+## v4: Ghost King's residence
+Third-person avatar, 8 labelled wings, manuscript UI (assets/ui.css, ui.js). Projects embed the live sites via iframe.
