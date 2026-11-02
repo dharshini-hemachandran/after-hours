@@ -60,3 +60,23 @@ table.t{width:100%;border-collapse:collapse;font:13px/1.4 var(--sans);margin:10p
 #pz{position:fixed;inset:0;z-index:35;display:none;place-items:center;background:rgba(10,4,8,.7);font:300 40px var(--serif);letter-spacing:.4em;color:#e8dcc1}
 
 body.gl #clock{display:none}
+/* ---- palette & HUD: charcoal, ink, teal, vermilion, lantern gold, parchment ---- */
+:root{--cy:#d6b46a;--red:#b3261e;--lav:#8e9195;--vi:#6f5a3a;--ink:#07090c;--deep:#0c1317}
+html,body{background:#07090c}
+.chip{border-color:rgba(214,180,106,.45);background:rgba(7,9,12,.72);color:#e8dcc1;border-radius:0;letter-spacing:.14em}
+.chip:hover,.chip:focus-visible,.chip[aria-pressed=true]{background:#d6b46a;color:#07090c}
+.brand{font-family:var(--serif);font-weight:400;letter-spacing:.12em;font-size:12px}.brand small{color:#8e9195}
+#idx{border-color:#d6b46a;background:rgba(7,9,12,.96)}#idx button{border-left:2px solid #8e1b17;font-family:var(--serif);letter-spacing:.04em;text-transform:none;font-size:14px}
+#guide,#clock{color:#aab0b4}#guide kbd{border-color:#6d6a60;color:#e8dcc1}
+#vig{background:radial-gradient(ellipse at 50% 55%,transparent 52%,rgba(3,5,7,.8))}
+#intro{background:radial-gradient(ellipse at 50% 120%,rgba(120,24,20,.45),transparent 60%),radial-gradient(ellipse at 20% 0%,rgba(24,60,66,.35),transparent 55%),#07090c;text-align:left;place-items:center}
+#intro .ib{max-width:760px;padding:6vh 6vw}#intro .t{font:600 11px var(--sans);letter-spacing:.3em;color:#b3261e;text-transform:uppercase;min-height:1.6em}
+#intro h1{font:300 clamp(40px,8vw,92px)/1 var(--serif);letter-spacing:-.01em;color:#ece1c8;margin:14px 0 20px;text-shadow:none}
+#intro .lead{font:400 clamp(16px,2vw,20px)/1.65 var(--serif);color:#c9c1ad;max-width:56ch;margin:0 0 26px}
+#intro .go{margin-top:6px}#intro .go .chip{display:inline-block;margin:0 8px 8px 0;padding:13px 20px;text-decoration:none;font-size:11px}
+#intro .go .chip:first-child{background:#8e1b17;border-color:#d6b46a}#intro .go .chip:first-child:hover{background:#b3261e;color:#fff}
+#intro .ln{margin-top:22px;font:12px var(--sans);letter-spacing:.1em;color:#8e9195}#intro .ln a{color:#c9c1ad;margin-right:18px;text-decoration:none;border-bottom:1px solid #6d6a60}
+.panel{border-color:#d6b46a}
+
+#ms .rec h3{font-style:normal}
+#intro #ld{margin-top:10px;color:#b3261e}

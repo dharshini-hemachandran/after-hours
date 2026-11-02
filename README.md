@@ -12,7 +12,7 @@ Interactive 2D street-exploration portfolio. Plain HTML/CSS/JS: no build step.
 - Local preview: `python3 -m http.server` then open http://localhost:8000
 - Deep links: `#gallery`, `#about`, `#arcade`, `#studio`, `#contact`.
 
-## 3D world
+
 `assets/world3d.js` builds the explorable wuxia compound procedurally with Three.js (vendored in `assets/vendor`, MIT). If WebGL is unavailable the earlier 2D street is used. Zones/portfolio mapping: `Z` array in `world3d.js`.
 
 ## v4: Ghost King's residence
@@ -23,3 +23,6 @@ Third-person avatar, 8 labelled wings, manuscript UI (assets/ui.css, ui.js). Pro
 - `assets/ui.js` + `assets/ui.css`: manuscript/archive interface system (one layout per wing).
 - Wings and zones: `Z` array in `world3d.js`; panel content: `P` object in `ui.js`.
 - Project chambers embed the live GitHub Pages projects in iframes (tabs: *Live exhibit* / *Live demonstration*).
+
+## Current build
+Ghost-city street, canal, courtyard and tiered manor (procedural Three.js, `assets/world3d.js`), manuscript UI (`assets/ui.js` / `ui.css`), generated resume `assets/Dharshini_Hemachandran_Resume.pdf` (review before use).

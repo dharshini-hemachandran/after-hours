@@ -190,7 +190,7 @@ body.gl #view,body.gl #rain,body.gl #bCr{display:none}#gl{position:fixed;inset:0
 <canvas id="rain"></canvas><div id="vig"></div><div id="grain"></div>
 
 <header class="hud" id="top">
-  <div class="brand">DHARSHINI<br>HEMACHANDRAN<small>AFTER HOURS · THE COMPOUND</small></div>
+  <div class="brand">DHARSHINI<br>HEMACHANDRAN<small>AFTER HOURS · A CITY OF LANTERNS</small></div>
   <div class="btns">
     <button class="chip" id="bIdx" aria-expanded="false" aria-controls="idx">Wings ▾</button>
     <button class="chip" id="bCr">Credits</button><button class="chip" id="bEd" style="display:none">Edit</button><button class="chip" id="bSnd" aria-pressed="false">Sound off</button>
@@ -205,11 +205,7 @@ body.gl #view,body.gl #rain,body.gl #bCr{display:none}#gl{position:fixed;inset:0
 <div id="ov" role="dialog" aria-modal="true"></div>
 <div id="lb" role="dialog" aria-modal="true" aria-label="Artwork viewer"><button class="chip cl" id="lbX">Close ✕</button><button class="chip nav l" id="lbP" aria-label="Previous">‹</button><figure><img id="lbI" alt=""><figcaption class="mono" id="lbC"></figcaption></figure><button class="chip nav r" id="lbN" aria-label="Next">›</button></div>
 
-<section id="intro">
-  <div><div class="t" id="introT"></div><h1>AFTER<br><span>HOURS</span></h1>
-  <div class="t" style="color:var(--off)">The Ghost King's residence is open tonight.</div>
-  <div class="go" id="introGo" style="margin-top:34px"><button class="chip" id="bEnter">Enter the compound ▸</button><button class="chip" id="bSkip" style="border-color:var(--lav)">Skip · view sections</button></div></div>
-</section>
+<section id="intro"><div class="ib"><div class="t" id="introT"></div><h1>Dharshini<br>Hemachandran</h1><p class="lead">AI &amp; ML undergraduate. I like understanding how complex systems work, from recommendation ranking to campus talent pipelines, and turning that into something useful: research, a working product, or a clear piece of communication.</p><div class="go" id="introGo"><button class="chip" id="bEnter">Enter the world ▸</button><button class="chip" id="bSkip">Portfolio index</button><a class="chip" href="assets/Dharshini_Hemachandran_Resume.pdf" download>Resume (PDF)</a><div class="ln"><a href="mailto:dharshini.void@gmail.com">Email</a><a target="_blank" rel="noopener" href="https://linkedin.com/in/dharshini-void">LinkedIn</a><a target="_blank" rel="noopener" href="https://github.com/dharshini-hemachandran">GitHub</a></div><div class="ln" id="ld">Building the city…</div></div></div></section>
 
 <link rel="stylesheet" href="assets/ui.css">
 <script src="assets/gallery.js"></script>
@@ -303,10 +299,10 @@ idx.onclick=e=>{const b=e.target.closest('button');if(b){enter();openP(b.dataset
 $('#bIdx').onclick=()=>{const o=idx.classList.toggle('open');$('#bIdx').setAttribute('aria-expanded',o)};
 $('#bCr').onclick=()=>{paused=true;ov.innerHTML=`<div class="panel" style="--c:#7778A8"><button class="chip x" id="cls">Close ✕</button><div class="loc mono">Photo credits</div><h2>Credits</h2><p>Environment built from Hong Kong photographs on Unsplash (Unsplash License). Colour-graded, not altered otherwise.</p>${CREDITS.map(([n,i])=>`<a class="tl" target="_blank" rel="noopener" href="https://unsplash.com/photos/${i}">${esc(n)} — Unsplash ↗</a>`).join('')}</div>`;ov.classList.add('open');$('#cls').onclick=closeP};
 /* ---------- intro ---------- */
-const lines=['THE OUTER GATE · LANTERNS LIT','A CHAMBER FOR EVERY STORY'];let li2=0,ci=0;
+const lines=['After Hours · an explorable portfolio'];let li2=0,ci=0;
 function type(){const t=$('#introT');if(li2>=lines.length){$('#introGo').classList.add('show');return}const L=lines[li2];if(ci<=L.length){t.textContent=L.slice(0,ci++);setTimeout(type,RM?0:38)}else{setTimeout(()=>{li2++;ci=0;type()},RM?0:650)}}type();
 function enter(){$('#intro').classList.add('gone');paused=false;if(!enter.d){enter.d=1;setTimeout(()=>$('#guide').style.opacity=.9,300)}}
-$('#bEnter').onclick=enter;$('#bSkip').onclick=()=>{enter();$('#idx').classList.add('open');$('#bIdx').setAttribute('aria-expanded',true)};
+$('#bEnter').onclick=enter;$('#bSkip').onclick=()=>{enter();window.AHUI&&window.AHUI.open('domain')};
 
 /* ---------- clock ---------- */
 setInterval(()=>{const d=new Date(Date.now()+ (8*60-(-new Date().getTimezoneOffset()))*60000);$('#clock').textContent='HKT '+String(1).padStart(2,'0')+':'+String(30+Math.floor((performance.now()/60000)%29)).padStart(2,'0')+' · DUSK'},1000);
