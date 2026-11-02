@@ -17,3 +17,9 @@ Interactive 2D street-exploration portfolio. Plain HTML/CSS/JS: no build step.
 
 ## v4: Ghost King's residence
 Third-person avatar, 8 labelled wings, manuscript UI (assets/ui.css, ui.js). Projects embed the live sites via iframe.
+
+## Residence (TGCF-inspired, original)
+- `assets/world3d.js`: procedural Three.js world, third-person avatar, wings, signs, map.
+- `assets/ui.js` + `assets/ui.css`: manuscript/archive interface system (one layout per wing).
+- Wings and zones: `Z` array in `world3d.js`; panel content: `P` object in `ui.js`.
+- Project chambers embed the live GitHub Pages projects in iframes (tabs: *Live exhibit* / *Live demonstration*).

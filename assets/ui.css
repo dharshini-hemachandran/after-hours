@@ -8,10 +8,10 @@ body.ms-open #prompt,body.ms-open #pad{display:none}
 #ms .rod::before{left:-9px}#ms .rod::after{right:-9px}
 #ms .sheet{width:min(1060px,94vw);flex:1;min-height:0;overflow:auto;position:relative;color:var(--ink2);font:400 16px/1.7 var(--serif);
  background:linear-gradient(90deg,rgba(90,60,20,.18),transparent 6%,transparent 94%,rgba(90,60,20,.18)),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .22 0 0 0 0 .08 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E"),var(--paper);box-shadow:0 0 0 1px #00000055,0 20px 60px #000c;scrollbar-color:var(--wine) var(--paper2)}
-#ms .inner{margin:18px;padding:clamp(18px,3.4vw,44px);border:1px solid var(--wine);outline:1px solid var(--gold);outline-offset:-7px;position:relative;min-height:calc(100% - 36px)}
+#ms .inner{margin:18px;padding:clamp(52px,6vw,60px) clamp(18px,3.4vw,44px) clamp(18px,3.4vw,44px);border:1px solid var(--wine);outline:1px solid var(--gold);outline-offset:-7px;position:relative;min-height:calc(100% - 36px)}
 #ms .inner::before,#ms .inner::after{content:"";position:absolute;width:46px;height:46px;border:2px solid var(--wine);pointer-events:none}
 #ms .inner::before{top:5px;left:5px;border-right:0;border-bottom:0}#ms .inner::after{bottom:5px;right:5px;border-left:0;border-top:0}
-#ms .x{position:sticky;top:6px;float:right;z-index:5;margin:-8px -8px 0 0;background:var(--wine);color:#f1dcc0;border:1px solid var(--gold);padding:8px 14px;font:600 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+#ms .x{position:sticky;top:6px;float:right;z-index:5;margin:-44px -8px 0 0;background:var(--wine);color:#f1dcc0;border:1px solid var(--gold);padding:8px 14px;font:600 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
 #ms .x small{opacity:.7;margin-left:8px}#ms .x:hover,#ms .x:focus-visible{background:var(--crim);outline:0}
 #ms h1,#ms h2,#ms h3{font-family:var(--serif);font-weight:500;color:var(--ink2);line-height:1.15;margin:0}
 #ms h1{font-size:clamp(30px,5vw,58px);letter-spacing:.01em}#ms h2{font-size:clamp(21px,2.6vw,30px);margin:34px 0 10px;display:flex;align-items:center;gap:12px}

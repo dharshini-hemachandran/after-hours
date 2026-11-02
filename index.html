@@ -192,7 +192,7 @@ body.gl #view,body.gl #rain,body.gl #bCr{display:none}#gl{position:fixed;inset:0
 <header class="hud" id="top">
   <div class="brand">DHARSHINI<br>HEMACHANDRAN<small>AFTER HOURS · THE COMPOUND</small></div>
   <div class="btns">
-    <button class="chip" id="bIdx" aria-expanded="false" aria-controls="idx">Jump to ▾</button>
+    <button class="chip" id="bIdx" aria-expanded="false" aria-controls="idx">Wings ▾</button>
     <button class="chip" id="bCr">Credits</button><button class="chip" id="bEd" style="display:none">Edit</button><button class="chip" id="bSnd" aria-pressed="false">Sound off</button>
   </div>
 </header>
@@ -298,7 +298,7 @@ addEventListener('keydown',e=>{const k=e.key;
 addEventListener('keyup',e=>{if(K[e.key])keys[K[e.key]]=0});
 const hold=(id,key)=>{const b=$(id),on=e=>{e.preventDefault();keys[key]=1},off=()=>keys[key]=0;b.addEventListener('pointerdown',on);['pointerup','pointerleave','pointercancel'].forEach(t=>b.addEventListener(t,off))};hold('#pL','b');hold('#pR','f');
 $('#pA').onclick=()=>near&&openP(near.h.t);$('#pBtn').onclick=()=>near&&openP(near.h.t);
-const idx=$('#idx');idx.innerHTML=(window.AHUI?AHUI.WINGS.map(w=>[w[0],w[1]]):[['about','About'],['arcade','Projects'],['gallery','Gallery'],['studio','Experience'],['contact','Contact']]).map(([i,n])=>`<button data-o="${i}" style="--c:#00E5FF">${n}</button>`).join('');
+const idx=$('#idx');idx.innerHTML=(window.AHUI?AHUI.WINGS.map(w=>[w[0],w[1]]):(window.AHUI?window.AHUI.WINGS.map(w=>[w[0],w[1]]):[['about','About']])).map(([i,n])=>`<button data-o="${i}" style="--c:#00E5FF">${n}</button>`).join('');
 idx.onclick=e=>{const b=e.target.closest('button');if(b){enter();openP(b.dataset.o)}};
 $('#bIdx').onclick=()=>{const o=idx.classList.toggle('open');$('#bIdx').setAttribute('aria-expanded',o)};
 $('#bCr').onclick=()=>{paused=true;ov.innerHTML=`<div class="panel" style="--c:#7778A8"><button class="chip x" id="cls">Close ✕</button><div class="loc mono">Photo credits</div><h2>Credits</h2><p>Environment built from Hong Kong photographs on Unsplash (Unsplash License). Colour-graded, not altered otherwise.</p>${CREDITS.map(([n,i])=>`<a class="tl" target="_blank" rel="noopener" href="https://unsplash.com/photos/${i}">${esc(n)} — Unsplash ↗</a>`).join('')}</div>`;ov.classList.add('open');$('#cls').onclick=closeP};
@@ -354,7 +354,7 @@ function editor(){paused=true;let tab='h',sel=null;
  $('#imp').onchange=e=>{const f=e.target.files[0];f&&f.text().then(t=>{try{const j=JSON.parse(t);if(!j.hot||!j.gal)throw 0;LAY=j;G=j.gal;save();show();say('Imported.')}catch(x){say('Invalid layout file.')}})};
  $('#rst').onclick=()=>{if(confirm('Reset to the default layout?')){LAY=JSON.parse(JSON.stringify(DEF));G=LAY.gal;save();show()}};
  $('#cls').onclick=()=>{build();closeP()}}
-$('#bEd').onclick=editor;window.__ah={keys:()=>keys,openP,closeP,lb,audit,editor,get G(){return G}};
+$('#bEd').onclick=editor;window.__ah={keys:()=>keys,openP,closeP,lb,lb,audit,editor,get G(){return G}};
 /* ---------- go ---------- */
 build();rainLoop();requestAnimationFrame(frame);
 const hp=()=>{const h=location.hash.slice(1);if(PANELS[h]||(window.AHUI&&AHUI.has(h))){enter();openP(h)}};hp();addEventListener('hashchange',hp);
