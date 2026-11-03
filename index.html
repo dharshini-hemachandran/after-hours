@@ -193,7 +193,7 @@ body.gl #view,body.gl #rain,body.gl #bCr{display:none}#gl{position:fixed;inset:0
   <div class="brand">DHARSHINI<br>HEMACHANDRAN<small>AFTER HOURS · A CITY OF LANTERNS</small></div>
   <div class="btns">
     <button class="chip" id="bIdx" aria-expanded="false" aria-controls="idx">Wings ▾</button>
-    <button class="chip" id="bCr">Credits</button><button class="chip" id="bEd" style="display:none">Edit</button><button class="chip" id="bSnd" aria-pressed="false">Sound off</button>
+    <a class="chip" href="moodboard.html" target="_blank" rel="noopener">Moodboard</a><button class="chip" id="bCr">Credits</button><button class="chip" id="bEd" style="display:none">Edit</button><button class="chip" id="bSnd" aria-pressed="false">Sound off</button>
   </div>
 </header>
 <nav id="idx" aria-label="Sections"></nav>
@@ -207,8 +207,8 @@ body.gl #view,body.gl #rain,body.gl #bCr{display:none}#gl{position:fixed;inset:0
 
 <section id="intro"><div class="ib"><div class="t" id="introT"></div><h1>Dharshini<br>Hemachandran</h1><p class="lead">AI &amp; ML undergraduate. I like understanding how complex systems work, from recommendation ranking to campus talent pipelines, and turning that into something useful: research, a working product, or a clear piece of communication.</p><div class="go" id="introGo"><button class="chip" id="bEnter">Enter the world ▸</button><button class="chip" id="bSkip">Portfolio index</button><a class="chip" href="assets/Dharshini_Hemachandran_Resume.pdf" download>Resume (PDF)</a><div class="ln"><a href="mailto:dharshini.void@gmail.com">Email</a><a target="_blank" rel="noopener" href="https://linkedin.com/in/dharshini-void">LinkedIn</a><a target="_blank" rel="noopener" href="https://github.com/dharshini-hemachandran">GitHub</a></div><div class="ln" id="ld">Building the city…</div></div></div></section>
 
-<link rel="stylesheet" href="assets/ui.css">
-<script src="assets/gallery.js"></script>
+<link rel="preload" href="assets/fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="assets/fonts.css"><link rel="stylesheet" href="assets/ui.css">
+<script src="assets/nav.js"></script><script src="assets/gallery.js"></script>
 <script src="assets/ui.js"></script>
 <script>
 (()=>{
@@ -274,7 +274,7 @@ let dy0=null;view.addEventListener('pointerdown',e=>{if(e.pointerType=='touch')d
 /* ---------- overlays ---------- */
 const ov=$('#ov');
 function goTo(t){const o=HS.find(o=>o.h.t==t);if(o){tz=clamp(-o.z-260,0,ZMAX);tsx=0}}
-function openP(id){const MN={about:'inner',arcade:'visibility',gallery:'garden',studio:'records',contact:'celestial'};id=MN[id]||id;if(window.AHUI&&window.AHUI.has(id)){window.__tp&&window.__tp(id);window.AHUI.open(id);return}const P=PANELS[id];if(!P)return;paused=true;keys={};goTo(id);ov.innerHTML=`<div class="panel" style="--c:${P.c}" role="document"><button class="chip x" id="cls">Close ✕</button><div class="loc mono">${P.loc}</div>${P.html()}</div>`;ov.classList.add('open');$('#idx').classList.remove('open');P.after&&P.after();$('#cls').onclick=closeP;ov.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>openP(b.dataset.go));$('#cls').focus()}
+function openP(id){const MN={about:'inner-residence',arcade:'central-archive',gallery:'artisans-court',studio:'council-hall',contact:'contact-gate',domain:'index'};id=MN[id]||id;if(window.AHUI&&window.AHUI.has(id)){window.__tp&&window.__tp(id);window.AHUI.open(id);return}const P=PANELS[id];if(!P)return;paused=true;keys={};goTo(id);ov.innerHTML=`<div class="panel" style="--c:${P.c}" role="document"><button class="chip x" id="cls">Close ✕</button><div class="loc mono">${P.loc}</div>${P.html()}</div>`;ov.classList.add('open');$('#idx').classList.remove('open');P.after&&P.after();$('#cls').onclick=closeP;ov.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>openP(b.dataset.go));$('#cls').focus()}
 function closeP(){ov.classList.remove('open');ov.innerHTML='';build&&0;paused=false}
 /* lightbox */
 let li=0;function lb(i){li=(i+G.length)%G.length;const g=G[li];$('#lbI').src=src(g,'full');$('#lbI').alt=g.t||g.c+' — design '+g.f;$('#lbC').textContent=g.c+' · No.'+g.f+(g.t?' · '+g.t:'')+'  ·  '+(li+1)+'/'+G.length;$('#lb').classList.add('open');$('#lbX').focus()}
@@ -302,7 +302,7 @@ $('#bCr').onclick=()=>{paused=true;ov.innerHTML=`<div class="panel" style="--c:#
 const lines=['After Hours · an explorable portfolio'];let li2=0,ci=0;
 function type(){const t=$('#introT');if(li2>=lines.length){$('#introGo').classList.add('show');return}const L=lines[li2];if(ci<=L.length){t.textContent=L.slice(0,ci++);setTimeout(type,RM?0:38)}else{setTimeout(()=>{li2++;ci=0;type()},RM?0:650)}}type();
 function enter(){$('#intro').classList.add('gone');paused=false;if(!enter.d){enter.d=1;setTimeout(()=>$('#guide').style.opacity=.9,300)}}
-$('#bEnter').onclick=enter;$('#bSkip').onclick=()=>{enter();window.AHUI&&window.AHUI.open('domain')};
+$('#bEnter').onclick=enter;$('#bSkip').onclick=()=>{enter();window.AHUI&&window.AHUI.open('index')};
 
 /* ---------- clock ---------- */
 setInterval(()=>{const d=new Date(Date.now()+ (8*60-(-new Date().getTimezoneOffset()))*60000);$('#clock').textContent='HKT '+String(1).padStart(2,'0')+':'+String(30+Math.floor((performance.now()/60000)%29)).padStart(2,'0')+' · DUSK'},1000);

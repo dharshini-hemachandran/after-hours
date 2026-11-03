@@ -1,5 +1,5 @@
 /* AFTER HOURS — manuscript / archive design system */
-:root{--paper:#e8dcc1;--paper2:#dccdab;--ink2:#1a1214;--wine:#6b1022;--crim:#a3182c;--gold:#9c7a34;--jade:#4a6b5d;--serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua","Songti SC","Noto Serif CJK SC",Georgia,serif;--sans:"Helvetica Neue",Helvetica,Arial,sans-serif}
+:root{--paper:#e8dcc1;--paper2:#dccdab;--ink2:#1a1214;--wine:#6b1022;--crim:#a3182c;--gold:#9c7a34;--jade:#4a6b5d;--display:"Cormorant Garamond","Noto Serif TC",Georgia,serif;--serif:"EB Garamond","Noto Serif TC",Georgia,serif;--text:"Source Serif 4","Noto Serif TC",Georgia,serif;--han:"Noto Serif TC","Songti TC",serif;--sans:"EB Garamond",Georgia,serif}
 body.ms-open #prompt,body.ms-open #pad{display:none}
 #ms{position:fixed;inset:0;z-index:45;display:none;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 40%,rgba(30,8,14,.78),rgba(4,2,5,.95));padding:2vh 2vw;animation:msin .5s cubic-bezier(.2,.8,.2,1)}
 #ms.open{display:flex}@keyframes msin{from{opacity:0;transform:translateY(18px)}}
@@ -80,3 +80,22 @@ html,body{background:#07090c}
 
 #ms .rec h3{font-style:normal}
 #intro #ld{margin-top:10px;color:#b3261e}
+
+/* ---- typography system: Cormorant (display) · EB Garamond (editorial) · Source Serif 4 (reading) · Noto Serif TC (Chinese seals) ---- */
+#ms .sheet{font:400 17px/1.7 var(--text)}
+#ms h1,#ms h2,.hd h1,#intro h1,.panel h2{font-family:var(--display);font-weight:500;letter-spacing:0}
+#ms h1{font-weight:500;font-size:clamp(34px,5.4vw,64px)}#ms h2{font-weight:600;font-style:italic;font-size:clamp(22px,2.6vw,31px)}#ms h3{font-family:var(--serif);font-weight:500;font-style:italic}
+.kick,.cap,.tabs button,.btn,.ebar,.dl dt,.bars .r,table.t th,.rec .no,.rec .rl,.cat .fas .n,.chips button,.seals b,.dir i,.gal .c{text-transform:none!important;font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:.03em}
+.kick{font-size:15px;color:var(--wine)}.tabs button{font-size:16px;font-style:normal;font-variant:small-caps;letter-spacing:.08em;padding:9px 16px}
+.btn{font-style:normal;font-size:15px;letter-spacing:.04em;font-variant:small-caps}.dl,.bars .r,table.t{font-family:var(--text);font-size:14.5px}.dl dt{font-size:15px}
+.vt{font-family:var(--display);font-weight:500;text-transform:none;letter-spacing:.12em;font-size:clamp(22px,3vw,36px)}
+.seal{font-family:var(--han);font-weight:400}.seal.sm{font-size:16px}
+.letter p:first-of-type::first-letter{font-family:var(--display);font-weight:600}
+.brand,#idx button,.chip,#guide,#clock,#mapov p{font-family:var(--serif);text-transform:none}.chip{font-style:normal;font-variant:small-caps;font-size:15px;letter-spacing:.07em}
+#intro h1{font-weight:300}#intro .lead{font-family:var(--text)}#intro .t{font-family:var(--serif);font-style:italic;text-transform:none;letter-spacing:.04em;font-size:16px}
+
+.pn{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:34px;padding-top:14px;border-top:1px solid var(--wine);flex-wrap:wrap}.pn .cap{text-align:center;flex:1}
+
+#pBtn{display:flex!important;flex-direction:column;align-items:center;gap:1px;padding:10px 24px!important;border:1px solid #d6b46a!important;background:rgba(7,9,12,.9)!important;color:#ece1c8!important;box-shadow:0 0 30px -8px #b3261e!important;letter-spacing:0!important;text-transform:none!important}
+#pBtn b{font:500 21px var(--display)}#pBtn span{font:italic 15px var(--serif);color:#c9b98a}#pBtn kbd{font:600 11px var(--serif);border:1px solid #8e8a78;padding:0 5px;border-radius:2px;color:#ece1c8}
+body.gl #bCr,#bCr{display:none!important}

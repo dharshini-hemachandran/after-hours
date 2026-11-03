@@ -26,3 +26,7 @@ Third-person avatar, 8 labelled wings, manuscript UI (assets/ui.css, ui.js). Pro
 
 ## Current build
 Ghost-city street, canal, courtyard and tiered manor (procedural Three.js, `assets/world3d.js`), manuscript UI (`assets/ui.js` / `ui.css`), generated resume `assets/Dharshini_Hemachandran_Resume.pdf` (review before use).
+
+## Navigation
+All rooms are declared in `assets/nav.js` (id, bounds, entrance, exit, destination, content, trigger) and validated on load. Content for each room lives in `assets/ui.js`. Reference board and credits: `moodboard.html`. Fonts (SIL OFL) in `assets/fonts`.
+Append `?lite` to the URL to disable the painterly render pass on slower machines.
