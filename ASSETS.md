@@ -3,7 +3,7 @@
 ## Photography (Unsplash, Unsplash License: free to use, hot-linked from images.unsplash.com with size parameters)
 | Use | Photo | Photographer |
 |---|---|---|
-| Hero (winged marble statue) | https://unsplash.com/photos/D0d53vtAo58 | Albert Canite |
+| Hero (Venus de Milo / Aphrodite of Melos) | https://unsplash.com/photos/XtiG9jkN3zU | Stephanie Klepacki |
 | Exhibit I · The Visibility Trap (statues, uneven light) | https://unsplash.com/photos/wRtN8AgpvLg | Matthieu Joannon |
 | Exhibit II · Campus Connect (vaulted hallway) | https://unsplash.com/photos/C1-EadESmEM | M Ivanovski |
 | About (19th-century albumen print) | https://unsplash.com/photos/0JBDFq14isg | Boston Public Library |
@@ -16,3 +16,6 @@ Bodoni Moda · Newsreader · Inter · IBM Plex Mono
 
 ## Code
 GSAP 3 + ScrollTrigger (standard no-charge GSAP licence), vendored in `assets/js/vendor`. No other dependencies.
+
+## Design plates
+`assets/design/` holds the owner's own poster and campaign work, converted to WebP only (no alterations).
