@@ -3,7 +3,7 @@
 ## Photography (Unsplash, Unsplash License: free to use, hot-linked from images.unsplash.com with size parameters)
 | Use | Photo | Photographer |
 |---|---|---|
-| Hero (Venus de Milo / Aphrodite of Melos) | https://unsplash.com/photos/XtiG9jkN3zU | Stephanie Klepacki |
+| Hero (Winged Victory of Samothrace, Louvre) | https://commons.wikimedia.org/wiki/File:Nike_of_Samothrake_Louvre_Ma2369_n3.jpg (public domain, hot-linked from upload.wikimedia.org) | Marie-Lan Nguyen |
 | Exhibit I · The Visibility Trap (statues, uneven light) | https://unsplash.com/photos/wRtN8AgpvLg | Matthieu Joannon |
 | Exhibit II · Campus Connect (vaulted hallway) | https://unsplash.com/photos/C1-EadESmEM | M Ivanovski |
 | About (19th-century albumen print) | https://unsplash.com/photos/0JBDFq14isg | Boston Public Library |
