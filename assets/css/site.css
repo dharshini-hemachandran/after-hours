@@ -32,7 +32,7 @@ img.is-missing{opacity:0}
 .hero-stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
 .hero-win{position:absolute;inset:0;overflow:hidden;background:linear-gradient(#6b5a45,#3a2b1e);clip-path:inset(8vh 27vw 6vh 27vw round 999px 999px 0 0)}
 .motion .hero-win{clip-path:inset(50vh 49vw 50vh 49vw round 999px 999px 0 0)}
-.hero-win img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%;filter:sepia(.32) saturate(.78) contrast(1.06) brightness(.94);transform-origin:50% 28%}
+.hero-win img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 78%;filter:sepia(.32) saturate(.78) contrast(1.06) brightness(.94);transform-origin:50% 28%}
 .hero-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(43,31,22,.4),rgba(43,31,22,0) 28%,rgba(43,31,22,0) 50%,rgba(43,31,22,.78))}
 .hero h1{position:absolute;left:0;right:0;bottom:clamp(60px,11vh,120px);z-index:2;font-size:clamp(50px,12.2vw,260px);line-height:.92;padding:0 var(--pad);pointer-events:none}
 .hero h1 span{display:block;overflow:hidden;padding-bottom:.08em}.hero h1 span b{display:block;font-weight:400}.hero h1 span:nth-child(2){text-align:right;font-style:italic}
