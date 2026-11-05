@@ -137,3 +137,4 @@ dialog#lbx img{max-width:100%;max-height:calc(100dvh - 120px);width:auto;height:
 dialog#lbx button{background:none;border:0;color:var(--ivory);cursor:pointer}.lb-p,.lb-n{font:300 54px/1 var(--disp);height:100%;opacity:.7;transition:opacity .3s}.lb-p:hover,.lb-n:hover{opacity:1}.lb-x{position:absolute;top:14px;right:20px;font:400 11.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(236,228,210,.5)!important;padding:9px 14px}
 @media(max-width:700px){dialog#lbx[open]{grid-template-columns:44px 1fr 44px}.lb-p,.lb-n{font-size:40px}}
 .skills{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}.skills li{font:500 12px/1 var(--mono,inherit);letter-spacing:.04em;padding:8px 12px;border:1px solid var(--rule);border-radius:999px}
+.statement .sbody{margin-top:clamp(28px,4vw,56px)}.statement .sbody p{font:400 clamp(17px,1.45vw,21px)/1.65 var(--text);letter-spacing:0;max-width:58ch;margin-top:1.1em}
